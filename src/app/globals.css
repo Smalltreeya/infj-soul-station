@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* INFJ心灵驿站全局样式 */
+@layer base {
+  :root {
+    /* INFJ心灵驿站的绿色主题色调 */
+    --background: 0 0% 100%;
+    --foreground: 142 30% 15%;
+    
+    /* 主题绿色 */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* 次要颜色 */
+    --secondary: 142 20% 90%;
+    --secondary-foreground: 142 30% 15%;
+    
+    /* 强调色 */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* 边框和卡片 */
+    --border: 142 20% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 142 30% 15%;
+    
+    /* 输入框 */
+    --input: 142 20% 90%;
+    --ring: 142 76% 36%;
+    
+    /* 链接 */
+    --link: 142 76% 36%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 font-sans antialiased;
+  }
+  
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-forest-400 rounded-full hover:bg-forest-500 transition-colors;
+  }
+}
+
+@layer components {
+  /* INFJ心灵驿站自定义组件样式 */
+  .gradient-green {
+    @apply bg-gradient-to-r from-forest-400 via-mint-400 to-ocean-400;
+  }
+  
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-forest-500 via-mint-500 to-ocean-500 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .btn-primary {
+    @apply bg-forest-500 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:bg-forest-600 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-mint-50 text-forest-600 font-medium py-2 px-4 rounded-lg border border-forest-200 transition-all duration-300 hover:bg-mint-100 hover:border-forest-300;
+  }
+}
